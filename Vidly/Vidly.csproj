@@ -240,10 +240,44 @@
     <Compile Include="Migrations\201906141259507_InitialModels.Designer.cs">
       <DependentUpon>201906141259507_InitialModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906141309136_AddMembershipType.cs" />
+    <Compile Include="Migrations\201906141309136_AddMembershipType.Designer.cs">
+      <DependentUpon>201906141309136_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141309591_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201906141309591_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201906141309591_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141317247_AddMembershipName.cs" />
+    <Compile Include="Migrations\201906141317247_AddMembershipName.Designer.cs">
+      <DependentUpon>201906141317247_AddMembershipName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141319238_PopulateMembershipNames.cs" />
+    <Compile Include="Migrations\201906141319238_PopulateMembershipNames.Designer.cs">
+      <DependentUpon>201906141319238_PopulateMembershipNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141336377_fixforeignKey.cs" />
+    <Compile Include="Migrations\201906141336377_fixforeignKey.Designer.cs">
+      <DependentUpon>201906141336377_fixforeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141342506_FixForeignKey2.cs" />
+    <Compile Include="Migrations\201906141342506_FixForeignKey2.Designer.cs">
+      <DependentUpon>201906141342506_FixForeignKey2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141349104_Customer2.cs" />
+    <Compile Include="Migrations\201906141349104_Customer2.Designer.cs">
+      <DependentUpon>201906141349104_Customer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906141350208_Customer3.cs" />
+    <Compile Include="Migrations\201906141350208_Customer3.Designer.cs">
+      <DependentUpon>201906141350208_Customer3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Customer2.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomersViewModels.cs" />
@@ -354,6 +388,30 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906141259507_InitialModels.resx">
       <DependentUpon>201906141259507_InitialModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141309136_AddMembershipType.resx">
+      <DependentUpon>201906141309136_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141309591_PopulateMembershipTypes.resx">
+      <DependentUpon>201906141309591_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141317247_AddMembershipName.resx">
+      <DependentUpon>201906141317247_AddMembershipName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141319238_PopulateMembershipNames.resx">
+      <DependentUpon>201906141319238_PopulateMembershipNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141336377_fixforeignKey.resx">
+      <DependentUpon>201906141336377_fixforeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141342506_FixForeignKey2.resx">
+      <DependentUpon>201906141342506_FixForeignKey2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141349104_Customer2.resx">
+      <DependentUpon>201906141349104_Customer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906141350208_Customer3.resx">
+      <DependentUpon>201906141350208_Customer3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,13 +9,19 @@
 <h2>Customers</h2>
 <br/>
 <table class="table table-hover table-borderless">
-
+    <thead>
+        <th>Name</th>
+        <th>Membership Type</th>
+    </thead>
     <tbody>
     @foreach (var customer in Model.Customers)
     {
         <tr>
             <td>
                 @Html.ActionLink(@customer.Name, "Details", "Customer", new { id = customer.Id }, null)
+            </td>
+            <td>
+                @customer.MembershipType.Name
             </td>
         </tr>
     }
