@@ -252,10 +252,23 @@
     <Compile Include="Migrations\201906160554465_TidyCustomersModel.Designer.cs">
       <DependentUpon>201906160554465_TidyCustomersModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906160558257_AddedGenres.cs" />
+    <Compile Include="Migrations\201906160558257_AddedGenres.Designer.cs">
+      <DependentUpon>201906160558257_AddedGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906160559185_PopulateGenres.cs" />
+    <Compile Include="Migrations\201906160559185_PopulateGenres.Designer.cs">
+      <DependentUpon>201906160559185_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906160604399_AddedExtraMovieInfo.cs" />
+    <Compile Include="Migrations\201906160604399_AddedExtraMovieInfo.Designer.cs">
+      <DependentUpon>201906160604399_AddedExtraMovieInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,6 +360,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -379,6 +393,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906160554465_TidyCustomersModel.resx">
       <DependentUpon>201906160554465_TidyCustomersModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906160558257_AddedGenres.resx">
+      <DependentUpon>201906160558257_AddedGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906160559185_PopulateGenres.resx">
+      <DependentUpon>201906160559185_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906160604399_AddedExtraMovieInfo.resx">
+      <DependentUpon>201906160604399_AddedExtraMovieInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
