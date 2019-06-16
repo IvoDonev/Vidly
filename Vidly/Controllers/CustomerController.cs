@@ -29,13 +29,13 @@ namespace Vidly.Controllers
         {
             return View(new CustomersViewModels()
             {
-                Customers = _context.Customers2.Include(c=>c.MembershipType).ToList()
+                Customers = _context.Customers.Include("MembershipType").ToList()
             });
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.FirstOrDefault(c => c.Id == id);
+            var customer = _context.Customers.Include("MembershipType").FirstOrDefault(c => c.Id == id);
             if (customer != null)
             {
                 return View(customer);

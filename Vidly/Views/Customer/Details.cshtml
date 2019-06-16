@@ -7,4 +7,10 @@
 
 <h2>Details</h2>
 
-<text>@Model.Name</text>
+<h5>@Model.Name</h5>
+
+<ul></ul>
+<li>Membership Type : @Model.MembershipType.Name</li>
+@if(Model.BirthDate != null) {
+    <li>BirthDate : @Model.BirthDate</li>
+}
