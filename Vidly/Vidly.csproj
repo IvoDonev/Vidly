@@ -264,16 +264,31 @@
     <Compile Include="Migrations\201906160604399_AddedExtraMovieInfo.Designer.cs">
       <DependentUpon>201906160604399_AddedExtraMovieInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906160651233_AddedIsSubscribedField.cs" />
+    <Compile Include="Migrations\201906160651233_AddedIsSubscribedField.Designer.cs">
+      <DependentUpon>201906160651233_AddedIsSubscribedField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906161117407_makeMovieReleaseDateNullable.cs" />
+    <Compile Include="Migrations\201906161117407_makeMovieReleaseDateNullable.Designer.cs">
+      <DependentUpon>201906161117407_makeMovieReleaseDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906161903248_MakeCustomerNameRequired.cs" />
+    <Compile Include="Migrations\201906161903248_MakeCustomerNameRequired.Designer.cs">
+      <DependentUpon>201906161903248_MakeCustomerNameRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18IfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomersViewModels.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -361,6 +376,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -402,6 +419,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906160604399_AddedExtraMovieInfo.resx">
       <DependentUpon>201906160604399_AddedExtraMovieInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906160651233_AddedIsSubscribedField.resx">
+      <DependentUpon>201906160651233_AddedIsSubscribedField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906161117407_makeMovieReleaseDateNullable.resx">
+      <DependentUpon>201906161117407_makeMovieReleaseDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906161903248_MakeCustomerNameRequired.resx">
+      <DependentUpon>201906161903248_MakeCustomerNameRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
