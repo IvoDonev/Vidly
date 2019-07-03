@@ -14,10 +14,14 @@ namespace Vidly.App_Start
         {
             // Can go back and forth between these types
             Mapper.CreateMap<Customer, CustomerDto>();
-            Mapper.CreateMap<CustomerDto, Customer>();
-
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             Mapper.CreateMap<Movie, MovieDto>();
+            Mapper.CreateMap<Genre, GenreDto>();
+
+            Mapper.CreateMap<CustomerDto, Customer>();
             Mapper.CreateMap<MovieDto, Movie>();
+            Mapper.CreateMap<MembershipTypeDto, MembershipType>();
+            Mapper.CreateMap<GenreDto, Genre>();
         }
     }
 }

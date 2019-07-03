@@ -12,7 +12,10 @@ namespace Vidly.DTOs
 
         [Required]
         public string Name { get; set; }
+
         public int MembershipTypeId { get; set; } // treat as a foreign key
+        public MembershipTypeDto MembershipType { get; set; }
+
         public DateTime? BirthDate { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
     }
