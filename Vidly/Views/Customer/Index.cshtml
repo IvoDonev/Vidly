@@ -7,23 +7,25 @@
 
 
 <h2>Customers</h2>
-<br/>
-<table id="customers"class="table table-hover">
+<br />
+
+@Html.ActionLink("Add new customer", "New", "Customer", new { }, new { @class = "btn btn-primary" })
+<hr />
+<table id="customers" class="table table-hover">
     <thead>
-        <th>Name</th>
-        <th>Membership Type</th>
-        <th>Delete</th>
+    <th>Name</th>
+    <th>Membership Type</th>
+    <th>Delete</th>
     </thead>
-    <tbody>
-    </tbody>
+    <tbody></tbody>
 
 </table>
 
 @section scripts
 {
     <script>
-        
-        $(document).ready(function() {
+
+        $(document).ready(function () {
 
             var dataTable = $("#customers").DataTable({
                 ajax: {
@@ -56,8 +58,7 @@
                         $.ajax({
                             url: "/api/customers/" + deleteButton.data("customer-id"),
                             method: "DELETE",
-                            success: function ()
-                            {
+                            success: function () {
                                 dataTable.row(deleteButton.parents("tr")).remove().draw();
                             }
                         })
@@ -65,5 +66,5 @@
                 });
             });
         });
-    </script> 
+    </script>
 }
