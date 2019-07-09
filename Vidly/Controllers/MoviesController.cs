@@ -86,12 +86,13 @@ namespace Vidly.Controllers
         {
             if (viewModel.Id == 0)
             {
-                // new customer
+                // new movie
                 var newMovie = new Movie()
                 {
                     Name = viewModel.Name,
                     GenreId = viewModel.GenreId.Value,
                     NumberInStock = viewModel.NumberInStock.Value,
+                    NumberAvailable = viewModel.NumberInStock.Value, // all available to start with
                     ReleaseDate = viewModel.ReleaseDate.Value,
                     DateAdded = DateTime.Now
                 };
@@ -102,6 +103,7 @@ namespace Vidly.Controllers
                 var movieInDb = _context.Movies.Single(m => m.Id == viewModel.Id);
                 movieInDb.GenreId = viewModel.GenreId.Value;
                 movieInDb.NumberInStock = viewModel.NumberInStock.Value;
+                movieInDb.NumberAvailable = viewModel.NumberInStock.Value;
                 movieInDb.ReleaseDate = viewModel.ReleaseDate.Value;
                 movieInDb.Name = viewModel.Name;
             }

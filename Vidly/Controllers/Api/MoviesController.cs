@@ -52,6 +52,7 @@ namespace Vidly.Controllers.Api
             }
 
             var movie = Mapper.Map<MovieDto, Movie>(movieDto);
+            movie.NumberAvailable = movie.NumberInStock;  // initially everything is available
 
             _context.Movies.Add(movie);
             _context.SaveChanges();
@@ -76,6 +77,7 @@ namespace Vidly.Controllers.Api
             }
 
             Mapper.Map(movieDto, movieInDb);
+            movieInDb.NumberAvailable = movieInDb.NumberInStock;
             _context.SaveChanges();
         }
 
