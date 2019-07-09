@@ -25,11 +25,13 @@ namespace Vidly
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootbox.js",
+                      "~/Scripts/toastr.js",
                       "~/Scripts/typeahead.bundle.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
+                      "~/Content/toastr.css",
                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
                       "~/Content/DataTables/css/buttons.dataTables.css",
                       "~/Content/DataTables/css/buttons.bootstrap4.css",
