@@ -1,0 +1,122 @@
+﻿@model Vidly.ViewModels.ReturnsViewModel
+@{
+    ViewBag.Title = "Returns";
+}
+
+<h2>Returns</h2>
+
+
+<form id="newRental">
+    <div class="form-group">
+        <label>Customer</label>
+        <div class="tt-container">
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
+        </div>
+    </div>
+</form>
+
+<table id="RentedMovies" class="table table-hover table-striped table-bordered">
+    <thead>
+    <th>Movie Name</th>
+    <th>Date Rented</th>
+    <th>Return</th>
+    </thead>
+    <tbody></tbody>
+
+</table>
+
+@section scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+
+            var dataTable = null;
+            var haveInit = false;
+
+            function destroyTable() {
+                if (haveInit) {
+                    dataTable.clear();
+                    dataTable.draw();
+                    haveInit = false;
+                }
+            }
+
+            function initTable(customerId) {
+                haveInit = true;
+                dataTable = $("#RentedMovies").DataTable({
+                    destroy: true,
+                    ajax: {
+                        url: "/api/Rental/" + customerId,
+                        dataSrc: "rentedMovies"
+                    },
+                    columns: [
+                        {
+                            data: "movieName"
+                        },
+                        {
+                            data: "dateRented"
+                        },
+                        {
+                            data: "movieId",
+                            render: function (data) {
+                                return "<button class='btn-danger js-delete' data-movie-id=" + data + ">Return</button>";
+                            }
+                        }
+
+
+                    ]
+                });
+            }
+
+            var vm = {}
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/Customers/?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({ minLength: 3, highlight: true },
+                {
+                    display: 'name',
+                    source: customers
+                }).
+                on("typeahead:select", function (e, customer) {
+                    vm.customerId = customer.id;
+                    initTable(customer.id)
+                }).
+                on("change", function (e) {
+                    destroyTable();
+                })
+
+             @if (Model.HasInitCustomer) {
+                 @:$('#customer').typeahead('val', "@Model.InitCustomer.Name")
+                 @:initTable(@Model.InitCustomer.Id)
+             }
+
+            $("#RentedMovies").on("click", ".js-delete", function () {
+                var returnButton = $(this);
+                bootbox.confirm("Are you sure you want to return this movie?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/returns/" + returnButton.data("movie-id"),
+                            method: "POST",
+                            success: function () {
+                                toastr["success"]("Film returned");
+                                dataTable.row(returnButton.parents("tr")).remove().draw();
+                            }
+                        })
+                    }
+                });
+            });
+
+
+
+        });
+    </script>
+}

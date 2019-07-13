@@ -66,6 +66,25 @@ namespace Vidly.Controllers.Api
             return Ok();
         }
 
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            var customerRentals = new CustomerRentalsDto()
+            {
+                CustomerId = id,
+                RentedMovies = _context.Rentals
+                    .Where(r => r.DateReturned == null)
+                    .Where(r => r.CustomerId == id)
+                    .Include(r => r.Movie)
+                    .Select(r => new RentedMovieDto()
+                    {
+                        MovieId = r.Movie.Id,
+                        MovieName = r.Movie.Name,
+                        DateRented = r.DateRented
+                    }).ToList()
+            };
+            return Ok(customerRentals);
+        }
 
     }
 }

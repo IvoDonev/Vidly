@@ -15,6 +15,7 @@
     <thead>
     <th>Name</th>
     <th>Membership Type</th>
+    <th>Rentals</th>
     <th>Delete</th>
     </thead>
     <tbody></tbody>
@@ -41,6 +42,13 @@
                     },
                     {
                         data: "membershipType.name"
+                    },
+
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<a href='/rentals/Returns/" + data + "' class='btn-link' data-customer-id=" + data + ">Rentals</a>";
+                        }
                     },
                     {
                         data: "id",
